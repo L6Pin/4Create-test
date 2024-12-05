@@ -1,0 +1,22 @@
+@if( isModalOpen$ | async){
+    <div class="modal__backdrop" (click)="onBackdropClick($event)">
+        <div class="modal">
+            <p class="modal__title">Add user</p>
+            <div class="modal__form">
+              <label for="userName">User's name: </label>
+              <input type="text" name="userName" />
+              <br />
+              <label for="isUserActive">Is user active?: </label>
+              <input type="checkbox" name="isUserActive" id="" />
+            </div>
+            <div class="modal__buttons">
+              <button class="modal__buttons_action">Create</button>
+              <button (click)="onCancel()" class="modal__buttons_cancel">
+                Cancel
+              </button>
+            </div>
+          </div>
+    </div>
+}
+
+
