@@ -1,25 +1,25 @@
-.users{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
+.users {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
 
-    &__content{
-        width: 90%;
+  &__content {
+    width: 90%;
 
-        @media (min-width: 768px){
-            width: 80%;
-        }
-
-        @media (min-width: 1200px){
-            width: 40%;
-        }
-
-        margin-top: 24px;
-
-        &__header{
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-        }
+    @media (min-width: 768px) {
+      width: 80%;
     }
+
+    @media (min-width: 1200px) {
+      width: 40%;
+    }
+
+    margin-top: 24px;
+
+    &__header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }

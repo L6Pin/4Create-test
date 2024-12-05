@@ -1,22 +1,41 @@
 @if( isModalOpen$ | async){
-    <div class="modal__backdrop" (click)="onBackdropClick($event)">
-        <div class="modal">
-            <p class="modal__title">Add user</p>
-            <div class="modal__form">
-              <label for="userName">User's name: </label>
-              <input type="text" name="userName" />
-              <br />
-              <label for="isUserActive">Is user active?: </label>
-              <input type="checkbox" name="isUserActive" id="" />
-            </div>
-            <div class="modal__buttons">
-              <button class="modal__buttons_action">Create</button>
-              <button (click)="onCancel()" class="modal__buttons_cancel">
-                Cancel
-              </button>
-            </div>
-          </div>
-    </div>
+<div class="modal__backdrop" (click)="onBackdropClick($event)">
+  <div class="modal">
+    <p class="modal__title">Add user</p>
+    <form [formGroup]="addUserForm" class="modal__form" (submit)="onSubmit()">
+      <div class="modal__form__input">
+        <label for="userName">User's name: </label>
+        <input type="text" name="userName" formControlName="name" />
+        @if(addUserForm.get('name')?.hasError('required') &&
+        addUserForm.get('name')?.touched){
+        <small>Name is required</small>
+        } @if(addUserForm.get('name')?.hasError('userNameExsists')){
+        <small>User with that name already exsists</small>
+        }
+      </div>
+      <div class="modal__form__input">
+        <label for="isUserActive">Is user active?: </label>
+        <input type="checkbox" name="isUserActive" formControlName="isActive" />
+      </div>
+      <div class="modal__buttons">
+        <button
+          type="submit"
+          class="modal__buttons_action"
+          [disabled]="!addUserForm.valid"
+        >
+     
+          @if(addUserForm.get('name')?.pending){
+            Loading...
+          }
+          @else{
+            Create
+          }
+        </button>
+        <button type="reset" (click)="onCancel()" class="modal__buttons_cancel">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
 }
-
-

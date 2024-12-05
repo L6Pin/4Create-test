@@ -2,7 +2,7 @@
   <div class="users__content">
     <div class="users__content__header">
         <h2 class="users__content__header__title">Users</h2>
-        <button (click)="onAddUser()" class="users__content__header__action">Add user</button>
+        <button [disabled]="isAddUserEnabled$ | async" (click)="onAddUser()" class="users__content__header__action">Add user</button>
     </div>
     <app-table></app-table>
   </div>
