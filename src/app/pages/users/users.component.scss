@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
 
-  &__content {
+  &_content {
     width: 90%;
 
     @media (min-width: 768px) {
@@ -16,7 +16,7 @@
 
     margin-top: 24px;
 
-    &__header {
+    &_header {
       width: 100%;
       display: flex;
       justify-content: space-between;

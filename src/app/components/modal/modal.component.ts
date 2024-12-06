@@ -34,15 +34,15 @@ export class ModalComponent {
   });
 
   onBackdropClick = (e: any) => {
-    if (e.target.className === 'modal__backdrop') {
+    if (e.target.className === 'modal_backdrop') {
       this.modalService.closeModal();
+      this.onCancel();
     }
   };
 
   onCancel = () => {
     this.addUserForm.reset();
     this.modalService.closeModal();
-    console.log(this.addUserForm.errors)
   };
 
   onSubmit = () => {

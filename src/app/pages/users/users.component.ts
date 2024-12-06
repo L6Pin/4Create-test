@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import { TableComponent } from '../../components/table/table.component';
 import { ModalComponent } from '../../components/modal/modal.component';
 import { ModalService } from '../../components/modal/modal.service';
-import { UsersService } from './store/users.service';
 import { UsersQuery } from './store/users.query';
 import { map } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
@@ -20,7 +19,6 @@ export class UsersComponent {
 
   isAddUserEnabled$ = this.usersQuery.selectAll().pipe(
     map((users) => {
-      console.log(users);
       return users.length < 5 && !users.some((user) => user.active === false)
         ? false
         : true;
@@ -29,6 +27,5 @@ export class UsersComponent {
 
   onAddUser = () => {
     this.modalService.openModal();
-    console.log(this.usersQuery.getAll());
   };
 }

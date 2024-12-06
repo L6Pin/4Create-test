@@ -1,8 +1,14 @@
 <div class="users">
-  <div class="users__content">
-    <div class="users__content__header">
-        <h2 class="users__content__header__title">Users</h2>
-        <button [disabled]="isAddUserEnabled$ | async" (click)="onAddUser()" class="users__content__header__action">Add user</button>
+  <div class="users_content">
+    <div class="users_content_header">
+      <h2 class="users_content_header_title">Users</h2>
+      <button
+        [disabled]="isAddUserEnabled$ | async"
+        (click)="onAddUser()"
+        class="users_content_header_action button button_main"
+      >
+        Add user
+      </button>
     </div>
     <app-table></app-table>
   </div>

@@ -1,40 +1,64 @@
-.modal{
-    width: 80%;
-    padding: 16px;
-    background-color: #fff;
+.modal {
+  width: 80%;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
 
-    @media (min-width: 768px){
-        width: 60%;
-    }
+  @media (min-width: 768px) {
+    width: 60%;
+  }
 
-    @media (min-width: 1200px){
-        width: 30%;
-    }
+  @media (min-width: 1200px) {
+    width: 30%;
+  }
 
-    &__backdrop{
-        position: absolute;
-        z-index: 1;
-        background-color: rgba($color: #000000, $alpha: .3);
-        backdrop-filter: blur(10px);
-        width: 100%;
-        height: 100%;
-        top: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  &_backdrop {
+    position: absolute;
+    z-index: 1;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    &__form{
-        margin-top: 24px;
+  &_title {
+    font-weight: bold;
+  }
 
-        &__input{
-            margin-top: 16px;
+  &_form {
+    margin-top: 24px;
+
+    &_input_container {
+      margin-top: 16px;
+
+      input {
+        margin-bottom: 6px;
+        padding: 4px;
+
+        &[type="checkbox"] {
+          width: 16px;
+          height: 16px;
         }
+      }
     }
 
-    &__buttons{
-        margin-top: 16px;
-        display: flex;
-        justify-content: space-between;
+    small {
+      color: rgba(215, 0, 1);
+      display: block;
     }
+  }
+
+  &_buttons {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+
+    &_action {
+      min-width: 73.5px;
+    }
+  }
 }

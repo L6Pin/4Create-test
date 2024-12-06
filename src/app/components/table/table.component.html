@@ -1,14 +1,22 @@
-<table border="1" class="table">
+<table class="table">
   <tr>
     <td>ID</td>
     <td>Name</td>
     <td>Status</td>
   </tr>
-  @for (user of users$ | async; track user.id) {    
+  @for (user of users$ | async; track user.id) {
   <tr>
-    <th>{{user.id}}</th>
-    <th>{{user.name}}</th>
-    <th><button (click)="toggleIsUserActive(user)">{{user.active ? 'Active' : 'Inactive'}}</button></th>
+    <th>{{ user.id }}</th>
+    <th>{{ user.name }}</th>
+    <th>
+      <button
+        class="button"
+        [ngClass]="user.active ? 'user-active' : 'user-inactive'"
+        (click)="toggleIsUserActive(user)"
+      >
+        {{ user.active ? "Active" : "Inactive" }}
+      </button>
+    </th>
   </tr>
   }
 </table>

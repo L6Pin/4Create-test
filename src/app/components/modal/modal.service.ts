@@ -9,11 +9,9 @@ export class ModalService {
 
   openModal = () => {
     this.isModalOpen.next(true);
-    console.log("Open")
   };
 
   closeModal = () => {
     this.isModalOpen.next(false);
-    console.log("closed")
   };
 }

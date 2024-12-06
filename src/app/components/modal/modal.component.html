@@ -1,9 +1,9 @@
 @if( isModalOpen$ | async){
-<div class="modal__backdrop" (click)="onBackdropClick($event)">
+<div class="modal_backdrop" (click)="onBackdropClick($event)">
   <div class="modal">
-    <p class="modal__title">Add user</p>
-    <form [formGroup]="addUserForm" class="modal__form" (submit)="onSubmit()">
-      <div class="modal__form__input">
+    <p class="modal_title">Add user</p>
+    <form [formGroup]="addUserForm" class="modal_form" (submit)="onSubmit()">
+      <div class="modal_form_input_container">
         <label for="userName">User's name: </label>
         <input type="text" name="userName" formControlName="name" />
         @if(addUserForm.get('name')?.hasError('required') &&
@@ -13,25 +13,25 @@
         <small>User with that name already exsists</small>
         }
       </div>
-      <div class="modal__form__input">
-        <label for="isUserActive">Is user active?: </label>
+      <div class="modal_form_input_container">
+        <label for="isUserActive">Is the user active?: </label>
         <input type="checkbox" name="isUserActive" formControlName="isActive" />
       </div>
-      <div class="modal__buttons">
+      <div class="modal_buttons">
         <button
           type="submit"
-          class="modal__buttons_action"
+          class="modal_buttons_action button button_main"
           [disabled]="!addUserForm.valid"
         >
-     
           @if(addUserForm.get('name')?.pending){
-            Loading...
-          }
-          @else{
-            Create
-          }
+          <span class="loader"></span>
+          } @else{ Create }
         </button>
-        <button type="reset" (click)="onCancel()" class="modal__buttons_cancel">
+        <button
+          type="reset"
+          (click)="onCancel()"
+          class="modal_buttons_cancel button button_secondary"
+        >
           Cancel
         </button>
       </div>
