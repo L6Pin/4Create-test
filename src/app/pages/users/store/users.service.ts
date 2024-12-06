@@ -1,6 +1,4 @@
 import { inject, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { tap } from 'rxjs';
 import { User } from './user.model';
 import { UsersStore } from './user.store';
 
@@ -14,9 +12,5 @@ export class UsersService {
 
   update(id: number, user: Partial<User>) {
     this.usersStore.update(id, user);
-  }
-
-  remove(id: number) {
-    this.usersStore.remove(id);
   }
 }

@@ -1,6 +1,6 @@
 import { AbstractControl, AsyncValidatorFn } from '@angular/forms';
 import { UsersQuery } from '../pages/users/store/users.query';
-import { debounce, debounceTime, map, Observable, of, take } from 'rxjs';
+import { debounceTime, map, take } from 'rxjs';
 
 export function userUniqueNameValidator(
   usersQuery: UsersQuery

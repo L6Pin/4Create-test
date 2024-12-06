@@ -5,8 +5,5 @@ export interface User {
   active: boolean;
 }
 
-export function createUser(params: Partial<User>) {
-  return {} as User;
-}
 
 
